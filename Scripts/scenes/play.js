@@ -115,9 +115,9 @@ var scenes;
             this._randomizeBitmapArray(bitmap[0], bitmap[1]);
             console.log(bitmap[0] + " , " + bitmap[1]);
             //Add First dice label
-            this._diceLabel1.text = bitmap[0];
+            this._diceLabel1.text = bitmap[0].replace("face", "");
             //Add Second dice label
-            this._diceLabel2.text = bitmap[1];
+            this._diceLabel2.text = bitmap[1].replace("face", "");
         };
         Play.prototype._checkRange = function (value, lowerBounds, upperBounds) {
             return (value >= lowerBounds && value <= upperBounds) ? value : -1;

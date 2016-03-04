@@ -145,10 +145,10 @@ module scenes {
             console.log(bitmap[0]+" , "+bitmap[1]);
             
             //Add First dice label
-            this._diceLabel1.text = bitmap[0];
+            this._diceLabel1.text = bitmap[0].replace("face","");
             
             //Add Second dice label
-            this._diceLabel2.text = bitmap[1];
+            this._diceLabel2.text = bitmap[1].replace("face","");
             
         }
         
