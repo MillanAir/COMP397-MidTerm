@@ -3,6 +3,8 @@ module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _playLabel: objects.Label;
+        private _diceLabel1: objects.Label;
+        private _diceLabel2: objects.Label;
         private _rollButton: objects.Button;
         private _die: createjs.Bitmap[];
 
@@ -30,6 +32,20 @@ module scenes {
             //     "#000000", 
             //     config.Screen.CENTER_X,config.Screen.CENTER_Y);
             // this.addChild(this._playLabel);
+            
+            //Add First dice label
+            this._diceLabel1 = new objects.Label(
+                "one","20px Consolas", 
+                "#000000", 
+                580,450);
+            this.addChild(this._diceLabel1);
+            
+            //Add Second dice label
+            this._diceLabel2 = new objects.Label(
+                "one","20px Consolas", 
+                "#000000", 
+                680,450);
+            this.addChild(this._diceLabel2);
 
             // add roll button to the scene
             this._rollButton = new objects.Button("rollButton", 640, 360 + 300);
@@ -110,8 +126,7 @@ module scenes {
                 this._die[1] = new createjs.Bitmap(assets.getResult(two));
                 this._die[1].y = 350;
                 this._die[1].x = 645;                
-                this.addChild(this._die[1]);        
-           
+                this.addChild(this._die[1]);    
         }
         
         //EVENT HANDLERS ++++++++++++++++++++
@@ -126,6 +141,14 @@ module scenes {
             console.log("Randomizing");
             var bitmap: string[] = this._spinDie();            
             this._randomizeBitmapArray(bitmap[0], bitmap[1]);
+            
+            console.log(bitmap[0]+" , "+bitmap[1]);
+            
+            //Add First dice label
+            this._diceLabel1.text = bitmap[0];
+            
+            //Add Second dice label
+            this._diceLabel2.text = bitmap[1];
             
         }
         

@@ -28,6 +28,12 @@ var scenes;
             //     "#000000", 
             //     config.Screen.CENTER_X,config.Screen.CENTER_Y);
             // this.addChild(this._playLabel);
+            //Add First dice label
+            this._diceLabel1 = new objects.Label("one", "20px Consolas", "#000000", 580, 450);
+            this.addChild(this._diceLabel1);
+            //Add Second dice label
+            this._diceLabel2 = new objects.Label("one", "20px Consolas", "#000000", 680, 450);
+            this.addChild(this._diceLabel2);
             // add roll button to the scene
             this._rollButton = new objects.Button("rollButton", 640, 360 + 300);
             this.addChild(this._rollButton);
@@ -104,9 +110,14 @@ var scenes;
         };
         //PRIVATE METHODS +++++++++++++
         Play.prototype._rollDie = function () {
+            console.log("Randomizing");
             var bitmap = this._spinDie();
             this._randomizeBitmapArray(bitmap[0], bitmap[1]);
-            console.log("Randomizing");
+            console.log(bitmap[0] + " , " + bitmap[1]);
+            //Add First dice label
+            this._diceLabel1.text = bitmap[0];
+            //Add Second dice label
+            this._diceLabel2.text = bitmap[1];
         };
         Play.prototype._checkRange = function (value, lowerBounds, upperBounds) {
             return (value >= lowerBounds && value <= upperBounds) ? value : -1;
