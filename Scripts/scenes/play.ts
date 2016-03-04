@@ -26,13 +26,6 @@ module scenes {
         public start(): void {
             console.log("Starting the start() method");
 
-            // //Add Play Label
-            // this._playLabel = new objects.Label(
-            //     "PLAY SCENE","60px Consolas", 
-            //     "#000000", 
-            //     config.Screen.CENTER_X,config.Screen.CENTER_Y);
-            // this.addChild(this._playLabel);
-            
             //Add First dice label
             this._diceLabel1 = new objects.Label(
                 "one","20px Consolas", 
@@ -48,7 +41,7 @@ module scenes {
             this.addChild(this._diceLabel2);
 
             // add roll button to the scene
-            this._rollButton = new objects.Button("rollButton", 640, 360 + 300);
+            this._rollButton = new objects.Button("rollButton", 640+30, 360 + 300);
             this.addChild(this._rollButton);
             this._rollButton.on("click", this._rollButtonClick, this);
             console.log("Added roll button");
