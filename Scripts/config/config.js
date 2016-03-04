@@ -8,18 +8,18 @@ var config;
         Scene.PLAY = 1;
         Scene.END = 2;
         return Scene;
-    }());
+    })();
     config.Scene = Scene;
     // Screen Constants
     var Screen = (function () {
         function Screen() {
         }
-        Screen.WIDTH = 640;
-        Screen.HEIGHT = 480;
-        Screen.CENTER_X = 320;
-        Screen.CENTER_Y = 240;
+        Screen.WIDTH = 1280;
+        Screen.HEIGHT = 720;
+        Screen.CENTER_X = 640;
+        Screen.CENTER_Y = 360;
         return Screen;
-    }());
+    })();
     config.Screen = Screen;
     // Game Constants
     var Game = (function () {
@@ -27,7 +27,7 @@ var config;
         }
         Game.FPS = 60;
         return Game;
-    }());
+    })();
     config.Game = Game;
 })(config || (config = {}));
 //# sourceMappingURL=config.js.map
